@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.meme {
+  width: 30%;
+  margin: 0 auto;
+  float: left;
+}
+
+img {
+  height: 350px;
+  width: 350px;
+  padding: 10px 10px;
+  margin: 10px auto;
+}
+
+form {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+input[type="text"] {
+  width: 100%;
+}
+.comments {
+  height: 300px;
+  overflow: scroll;
+  border: solid 1px #000;
+  padding: 10px;
+  margin: 0 10px;
+}

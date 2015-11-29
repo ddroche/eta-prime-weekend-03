@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  .wrapper
+    each meme in memes
+      .meme
+        img(src='#{meme.url}' id='#{meme.id}' alt='#{meme.title}')
+        form
+          input(
+            type='text'
+            name='comment'
+            value='Comment Here'
+            )
+          input(
+            type='submit'
+            value='Submit'
+            )
+        h2 Comments
+        .comments(class='#{meme.id}')
+    
