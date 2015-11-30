@@ -33,6 +33,8 @@ router.post('/', function(req, res, next) {
         res.send(newImgComment);
       }
     });
+  } else {
+    res.status(400).send('Uh oh! Something went wrong!');
   }
 
 });

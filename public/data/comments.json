@@ -238,5 +238,13 @@
   {
     "imageId": "1",
     "message": "where are the aliens?"
+  },
+  {
+    "imageId": "2",
+    "message": "What arrow?"
+  },
+  {
+    "imageId": "2",
+    "message": "That arrow!"
   }
 ]
