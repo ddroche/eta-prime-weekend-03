@@ -34,7 +34,7 @@ router.post('/', function(req, res, next) {
       }
     });
   } else {
-    res.status(400).send('message or imageId missing');
+    res.status(400).send('Please enter a comment');
   }
 
 });

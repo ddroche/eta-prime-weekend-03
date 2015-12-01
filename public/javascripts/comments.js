@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
   });
 
-  $('input[name="comment"]').attr('required', 'required');
+  // $('input[name="comment"]').attr('required', 'required');
 
   $('form').on('submit', function(event) {
     try {
@@ -28,14 +28,20 @@ $(document).ready(function() {
         message: data[0].value,
         imageId: $(this).prev().attr('id')
       };
+      var $error = $('.error' + comment.imageId).parent();
+
       console.log(comment);
       $.ajax({
         method: 'POST',
         url: '/comments',
         data: comment,
       }).done(function(data) {
+        $error.css('visibility', 'hidden');
         console.log(data);
         renderComment(data);
+      }).fail(function(data) {
+        console.log('FAIL!');
+        $error.css('visibility', 'visible');
       });
     } catch (exception) {
       console.log(exception);

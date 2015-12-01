@@ -7,6 +7,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 a {
   color: #00B7FF;
 }
@@ -22,6 +26,7 @@ a {
 }
 
 img {
+  display: block;
   height: 350px;
   width: 350px;
   padding: 10px 10px;
@@ -42,4 +47,12 @@ input[type="text"] {
   border: solid 1px #000;
   padding: 10px;
   margin: 0 10px;
+}
+.errorMSG {
+  visibility: hidden;
+  width: 75%;
+  margin: 10px auto;
+  padding: 1px 10px;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 10px;
 }
