@@ -6,6 +6,10 @@ $(document).ready(function() {
     $('.' + object.imageId).append($p);
   }
 
+  function clearComments() {
+    $('.comments').html('');
+  }
+
   $('form').each(function(event) {
     var imageId = $(this).prev().attr('id');
     $.ajax({
@@ -19,6 +23,14 @@ $(document).ready(function() {
   });
 
   // $('input[name="comment"]').attr('required', 'required');
+
+  $('input[type="text"]').on('focus', function(event) {
+    try {
+      $(this).val('');
+    } catch (exception) {
+      console.log(exception);
+    }
+  });
 
   $('form').on('submit', function(event) {
     try {
@@ -36,12 +48,23 @@ $(document).ready(function() {
       }).done(function(data) {
         $error.css('visibility', 'hidden');
         renderComment(data);
+        $('input[type="text"]').val('Comment Here');
       }).fail(function(data) {
         $error.css('visibility', 'visible');
       });
     } catch (exception) {
       console.log(exception);
     }
+  });
+
+  $('.reset').on('click', 'button', function(event) {
+    event.preventDefault();
+    $.ajax({
+      method: 'GET',
+      url: '/magicString'
+    }).done(function() {
+      clearComments();
+    });
   });
 
 });

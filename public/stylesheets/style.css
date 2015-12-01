@@ -56,3 +56,11 @@ input[type="text"] {
   background-color: rgba(255, 0, 0, 0.5);
   border-radius: 10px;
 }
+.reset {
+  clear: both;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px;
+  width: 50%;
+
+}
