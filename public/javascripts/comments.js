@@ -18,6 +18,8 @@ $(document).ready(function() {
     });
   });
 
+  $('input[name="comment"]').attr('required', 'required');
+
   $('form').on('submit', function(event) {
     try {
       event.preventDefault();
@@ -34,13 +36,10 @@ $(document).ready(function() {
       }).done(function(data) {
         console.log(data);
         renderComment(data);
-      }).fail(function(data) {
-        console.log($(this).parent().next('.comments'));
-        $(this).parent().next('.comments').prepend('Uh oh! Something went wrong!');
-        // $('.' + data.imageId).prepend('Uh oh! Something went wrong!');
       });
     } catch (exception) {
       console.log(exception);
     }
   });
+
 });

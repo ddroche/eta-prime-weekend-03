@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var comments = require('../public/data/comments.json');
+var comments = require('../data/comments.json');
 var fs = require('fs');
 var path = require('path');
 
@@ -23,7 +23,7 @@ router.post('/', function(req, res, next) {
   var newImgComment = {imageId: req.body.imageId, message: req.body.message};
   if (newImgComment.imageId && newImgComment.message) {
     comments.push(newImgComment);
-    var filePath = path.join(__dirname, '../public/data/comments.json');
+    var filePath = path.join(__dirname, '../data/comments.json');
     var commentString = JSON.stringify(comments);
 
     fs.writeFile(filePath, commentString, function(err) {
@@ -34,7 +34,7 @@ router.post('/', function(req, res, next) {
       }
     });
   } else {
-    res.status(400).send('Uh oh! Something went wrong!');
+    res.status(400).send('message or imageId missing');
   }
 
 });
