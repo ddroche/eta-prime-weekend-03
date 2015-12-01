@@ -29,18 +29,14 @@ $(document).ready(function() {
         imageId: $(this).prev().attr('id')
       };
       var $error = $('.error' + comment.imageId).parent();
-
-      console.log(comment);
       $.ajax({
         method: 'POST',
         url: '/comments',
         data: comment,
       }).done(function(data) {
         $error.css('visibility', 'hidden');
-        console.log(data);
         renderComment(data);
       }).fail(function(data) {
-        console.log('FAIL!');
         $error.css('visibility', 'visible');
       });
     } catch (exception) {
